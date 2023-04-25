@@ -1,0 +1,33 @@
+name: publish
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: yarn
+      - run: yarn test
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: |
+          mv ./package.json ./src/package.json
+          mv ./README.md ./src/README.md
+          mv ./LICENSE ./src/LICENSE
+          npm publish ./src
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
