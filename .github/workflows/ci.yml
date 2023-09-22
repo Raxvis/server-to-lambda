@@ -34,18 +34,18 @@ jobs:
           yarn test --coverage
       - name: Codecov
         uses: codecov/codecov-action@v3
-  codeclimate:
-    needs: build
-    runs-on: ubuntu-latest
+  # codeclimate:
+  #   needs: build
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@master
-      - name: yarn install
-        run: yarn
-      - name: Code Climate
-        uses: paambaati/codeclimate-action@v5.0.0
-        env:
-          CC_TEST_REPORTER_ID: 0821c701bb20ce2afc198c727f4a8aefaecc87bf6af23f1aafd2e0fe1b09d8bf
-        with:
-          coverageCommand: yarn test --coverage
-          debug: true
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - name: yarn install
+  #       run: yarn
+  #     - name: Code Climate
+  #       uses: paambaati/codeclimate-action@v5.0.0
+  #       env:
+  #         CC_TEST_REPORTER_ID: 0821c701bb20ce2afc198c727f4a8aefaecc87bf6af23f1aafd2e0fe1b09d8bf
+  #       with:
+  #         coverageCommand: yarn test --coverage
+  #         debug: true
