@@ -8,7 +8,7 @@
   },
   "description": "Run a local webserver to proxy requests to your lambda",
   "devDependencies": {
-    "eslint": "8.51.0",
+    "eslint": "8.57.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-jest": "27.4.2",
     "prettier": "3.0.3"
