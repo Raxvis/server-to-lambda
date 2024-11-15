@@ -36,18 +36,18 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-  codeclimate:
-    needs: build
-    runs-on: ubuntu-latest
+  # codeclimate:
+  #   needs: build
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@master
-      - name: npm install
-        run: npm i
-      - name: Code Climate
-        uses: paambaati/codeclimate-action@v9.0.0
-        env:
-          CC_TEST_REPORTER_ID: 0821c701bb20ce2afc198c727f4a8aefaecc87bf6af23f1aafd2e0fe1b09d8bf
-        with:
-          coverageCommand: npm test -- --coverage
-          debug: true
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - name: npm install
+  #       run: npm i
+  #     - name: Code Climate
+  #       uses: paambaati/codeclimate-action@v9.0.0
+  #       env:
+  #         CC_TEST_REPORTER_ID: 0821c701bb20ce2afc198c727f4a8aefaecc87bf6af23f1aafd2e0fe1b09d8bf
+  #       with:
+  #         coverageCommand: npm test -- --coverage
+  #         debug: true
