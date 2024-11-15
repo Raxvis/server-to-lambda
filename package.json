@@ -27,5 +27,5 @@
     "format": "npx @biomejs/biome format --write src/",
     "test": "echo \"no tests yet\""
   },
-  "version": "0.0.4"
+  "version": "0.0.5"
 }
