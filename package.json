@@ -8,7 +8,7 @@
   },
   "description": "Run a local webserver to proxy requests to your lambda",
   "devDependencies": {
-    "@biomejs/biome": "2.4.9"
+    "@biomejs/biome": "2.4.14"
   },
   "files": [
     "src/"
